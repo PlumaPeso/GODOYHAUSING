@@ -1,0 +1,225 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #15332d;
+    color: #ffffff;
+    overflow-x: hidden; /* Previene desplazamiento horizontal no deseado */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Asegura que los elementos del header estén bien distribuidos */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent; /* Encabezado transparente */
+    position: absolute; /* El header flota sobre la imagen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 10; /* Garantiza que esté encima de otros elementos */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.header .logo h1 {
+    display: none;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0; /* Elimina márgenes innecesarios */
+}
+
+.header .nav {
+    display: flex;
+    gap: 15px; /* Espacio uniforme entre los botones */
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: #223f32;
+    font-weight: bold;
+    background-color: #d6f5d8;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.header .nav a:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento */
+    background-color: #a0d7a5; /* Cambia el color al pasar el cursor */
+}
+
+/* Main Section */
+.background-image {
+    height: 100vh; /* Cubre toda la altura de la ventana */
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.search-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.search-container h2 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-container .search-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #223f32;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Options Section */
+/* Options Section */
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px; /* Espaciado entre las opciones */
+    background-color: #DBF0DD; /* Fondo verde claro */
+    padding: 30px; /* Espaciado interno */
+    margin: 20px auto; /* Centrado en la página */
+    width: 90%; /* Ancho máximo */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar relieve */
+}
+
+.option {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #223f32; /* Color del texto */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+.option p {
+    margin-bottom: 10px; /* Espaciado debajo del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrado */
+}
+
+.option select {
+    width: 100%; /* Toma todo el ancho disponible */
+    padding: 8px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    color: #223f32; /* Color del texto */
+    background-color: #f9f9f9; /* Fondo del select */
+    border: 1px solid #cccccc; /* Borde del select */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Elimina el borde azul al seleccionar */
+    transition: border-color 0.3s ease;
+}
+
+.option select:focus {
+    border-color: #a0d7a5; /* Cambia el color del borde al enfocar */
+}
+
+
+/* Footer */
+.footer {
+    background-color: #15332d; /* Fondo verde oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 40px 20px; /* Espaciado interno */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Cuatro columnas */
+    gap: 20px; /* Espacio entre columnas */
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+.footer h2, .footer h3 {
+    color: #ffffff; /* Títulos en verde claro */
+    margin-bottom: 10px; /* Espaciado debajo de los títulos */
+}
+
+.footer-info {
+    font-size: 14px; /* Tamaño de texto del bloque de información */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+
+.footer-links ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el espaciado interno */
+}
+
+.footer-links ul li {
+    margin: 5px 0; /* Espaciado entre elementos de la lista */
+}
+
+.footer-links ul li a {
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Efecto de transición al pasar el cursor */
+}
+
+.footer-links ul li a:hover {
+    color: #a0d7a5; /* Cambia el color del enlace al pasar el cursor */
+}
+
+.footer-social a {
+    color: #ffffff; /* Iconos blancos */
+    font-size: 24px; /* Tamaño de los iconos */
+    margin-right: 15px; /* Espaciado entre los iconos */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #a0d7a5; /* Cambia el color de los iconos al pasar el cursor */
+}
+
+.footer-location p {
+    font-size: 14px; /* Tamaño del texto */
+    line-height: 1.6; /* Altura de línea */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* social .social-icons */
+.footer-social {
+    display: block;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social .social-link img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social .social-link img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Propiedad - Godoy Housing</title>
+    <link rel="stylesheet" href="publicar_propiedad.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>GODOY HOUSING</h1>
+        </div>
+        <button class="logout-btn">SALIR</button>
+    </header>
+    <main class="publish-container">
+        <section class="form-section">
+            <h2>PUBLICAR PROPIEDAD</h2>
+            <div class="form-group">
+                <select class="input-field">
+                    <option value="" disabled selected>TIPO DE INMUEBLE</option>
+                    <option value="casa">Casa</option>
+                    <option value="departamento">Departamento</option>
+                    <option value="terreno">Terreno</option>
+                </select>
+                <select class="input-field">
+                    <option value="" disabled selected>VENTA O RENTA</option>
+                    <option value="venta">Venta</option>
+                    <option value="renta">Renta</option>
+                </select>
+                <select class="input-field">
+                    <option value="" disabled selected>PRECIO</option>
+                    <option value="$50,000-$100,000">$50,000-$100,000</option>
+                    <option value="$100,000-$500,000">$100,000-$500,000</option>
+                </select>
+                <textarea class="input-field" placeholder="DESCRIPCION BREVE"></textarea>
+            </div>
+            <h3>IMAGENES DEL INMUEBLE</h3>
+            <div class="image-uploader">
+                <div class="image-box">AGREGAR IMAGEN</div>
+                <div class="image-box">AGREGAR IMAGEN</div>
+                <div class="image-box">AGREGAR IMAGEN</div>
+            </div>
+        </section>
+        <section class="preview-section">
+            <h2>VISTA PREVIA DE PUBLICACION</h2>
+            <div class="preview-card">
+                <div class="preview-image">
+                    <p>Imagen</p>
+                </div>
+                <div class="preview-info">
+                    <p class="preview-title">TITULO DE LA PUBLICACION</p>
+                    <p class="preview-price">MXN PRECIO</p>
+                    <p class="preview-time">TIEMPO DE PUBLICACION</p>
+                    <button class="details-btn">DETALLES</button>
+                </div>
+            </div>
+        </section>        
+    </main>
+    <section class="location-section">
+        <div class="location-form">
+            <h3>1 DIRECCIÓN · UBICACIÓN</h3>
+            <label for="postal-code">CÓDIGO POSTAL</label>
+            <select id="postal-code">
+                <option value="">Selecciona tu código postal</option>
+            </select>
+    
+            <label for="state">ESTADO</label>
+            <select id="state">
+                <option value="">Selecciona tu estado</option>
+            </select>
+    
+            <label for="municipality">MUNICIPIO</label>
+            <select id="municipality">
+                <option value="">Selecciona tu municipio</option>
+            </select>
+    
+            <label for="colony">COLONIA</label>
+            <select id="colony">
+                <option value="">Selecciona tu colonia</option>
+            </select>
+    
+            <label for="street">CALLE</label>
+            <input type="text" id="street" placeholder="Ingresa tu calle">
+    
+            <label for="number">NÚMERO</label>
+            <input type="text" id="number" placeholder="Ingresa el número">
+    
+            <button class="location-btn">APLICAR</button>
+        </div>
+        <div class="location-map">
+            <h3>CONFIRMAR UBICACION</h3>
+            <img src="map-image.avif" alt="Confirma tu ubicación">
+        </div>
+    </section>
+    <section class="specifications-section">
+        <h3 class="specifications-title">2. ESPECIFICACIONES · CARACTERISTICAS</h3>
+        <hr>
+        <div class="specifications-group">
+            <div class="specification">
+                <label for="recamaras">RECAMARAS</label>
+                <div class="specification-controls">
+                    <button class="specification-btn decrement" onclick="decrementValue('recamaras')">−</button>
+                    <div id="recamaras" class="specification-value">0</div>
+                    <button class="specification-btn increment" onclick="incrementValue('recamaras')">+</button>
+                </div>
+            </div>
+            
+            <div class="specification">
+                <label for="baños">BAÑOS</label>
+                <div class="specification-controls">
+                    <button class="specification-btn" onclick="decrementValue('baños')">−</button>
+                    <div id="baños" class="specification-value">0</div>
+                    <button class="specification-btn" onclick="incrementValue('baños')">+</button>
+                </div>
+            </div>
+            <div class="specification">
+                <label for="Mbaños">MEDIOS BAÑOS</label>
+                <div class="specification-controls">
+                    <button class="specification-btn" onclick="decrementValue('Mbaños')">−</button>
+                    <div id="Mbaños" class="specification-value">0</div>
+                    <button class="specification-btn" onclick="incrementValue('Mbaños')">+</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="specifications-group">
+            <div class="specification">
+                <label for="pisos">PISOS</label>
+                <div class="specification-controls">
+                    <button class="specification-btn" onclick="decrementValue('pisos')">−</button>
+                    <div id="pisos" class="specification-value">0</div>
+                    <button class="specification-btn" onclick="incrementValue('pisos')">+</button>
+                </div>
+            </div>
+            <div class="specification">
+                <label for="esta">ESTACIONAMIENTOS</label>
+                <div class="specification-controls">
+                    <button class="specification-btn" onclick="decrementValue('esta')">−</button>
+                    <div id="esta" class="specification-value">0</div>
+                    <button class="specification-btn" onclick="incrementValue('esta')">+</button>
+                </div>
+            </div>
+            <div class="specification">
+                <label for="salas">SALAS</label>
+                <div class="specification-controls">
+                    <button class="specification-btn" onclick="decrementValue('salas')">−</button>
+                    <div id="salas" class="specification-value">0</div>
+                    <button class="specification-btn" onclick="incrementValue('salas')">+</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="size-inputs">
+            <div class="size-input">
+                <label>TAMAÑO DE TERRENO</label>
+                <input type="text" placeholder="0">
+                <span>M2</span>
+            </div>
+            <div class="size-input">
+                <label>TAMAÑO DE CONSTRUCCION</label>
+                <input type="text" placeholder="0">
+                <span>M2</span>
+            </div>
+            <div class="size-input">
+                <label>TAMAÑO DE JARDIN O PATIO</label>
+                <input type="text" placeholder="0">
+                <span>M2</span>
+            </div>
+        </div>
+    </section>
+    <section class="amenities-section">
+        <h3 class="amenities-title">3 ESPECIFICACIONES · AMENIDADES Y SERVICIOS</h3>
+        <hr class="amenities-title-hr">
+        <div class="amenities-container">
+            <div class="amenities-group">
+                <h4>AMENIDADES</h4>
+                <div class="amenity-options">
+                    <button class="amenity-btn">Jardín</button>
+                    <button class="amenity-btn">Alberca</button>
+                    <button class="amenity-btn">Terraza</button>
+                    <button class="amenity-btn">Amueblado</button>
+                    <button class="amenity-btn">Cuarto de servicio</button>
+                    <button class="amenity-btn">Spa</button>
+                    <button class="amenity-btn">Asador</button>
+                    <button class="amenity-btn">GYM</button>
+                    <button class="amenity-btn">Mascotas</button>
+                    <button class="amenity-btn">Sotano</button>
+                    <button class="amenity-btn">Balcón</button>
+                    <button class="amenity-btn">Bodega</button>
+                    <button class="amenity-btn">Jacuzzi</button>
+                    <button class="amenity-btn">Domótica</button>
+                    <button class="amenity-btn add-btn">+</button>
+                </div>
+            </div>
+            <div class="amenities-group">
+                <h4>SERVICIOS</h4>
+                <div class="amenity-options">
+                    <button class="amenity-btn">A/C</button>
+                    <button class="amenity-btn">Limpieza</button>
+                    <button class="amenity-btn">WIFI</button>
+                    <button class="amenity-btn">Luz</button>
+                    <button class="amenity-btn">Agua</button>
+                    <button class="amenity-btn">Jardinería</button>
+                    <button class="amenity-btn">Conserjería</button>
+                    <button class="amenity-btn">Club</button>
+                    <button class="amenity-btn">Área de coworking</button>
+                    <button class="amenity-btn">Zona de carga para vehículos</button>
+                    <button class="amenity-btn">Zona de reciclaje</button>
+                    <button class="amenity-btn">Valet parking</button>
+                    <button class="amenity-btn add-btn">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="description-section">
+        <h3 class="description-title">4 ESPECIFICACIONES · DESCRIPCION</h3>
+        <hr class="description-title-hr">
+        <div class="description-container">
+            <h4>DESCRIBE TU PROPIEDAD</h4>
+            <p>Agrega datos relevantes como: Acabados de la propiedad, Servicios adicionales, Reglamentos, Lugares cercanos como escuelas, hospitales, tiendas departamentales, Entretenimiento, etc.</p>
+            <textarea class="description-textarea" placeholder="ESCRIBE AQUÍ"></textarea>
+            <p class="character-count">0/3000</p>
+        </div>
+    </section>
+    <section class="images-section">
+        <h3 class="images-title">5 ESPECIFICACIONES · IMÁGENES</h3>
+        <hr class="images-title-hr">
+        <div class="images-container">
+            <h4>MUESTRA TU PROPIEDAD</h4>
+            <p>Usa fotos horizontales que muestren las áreas completas. Si aún tiene muebles, ordénala y hazla lucir. SOLO JPEG, PNG Y WEBP</p>
+            <div class="images-grid">
+                <div class="image-category">
+                    <h5>BAÑO</h5>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                </div>
+                <div class="image-category">
+                    <h5>COCINA</h5>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                </div>
+                <div class="image-category">
+                    <h5>RECAMARA</h5>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                </div>
+                <div class="image-category">
+                    <h5>COCHERA</h5>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                    <div class="image-upload-box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        <h3 class="contact-title">6 CONTACTO</h3>
+        <hr class="contact-title-hr">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h4>DATOS DEL CONTACTO</h4>
+                <p>Ingresa tus datos personales para que se puedan contactar por el medio más favorable de los interesados en tu propiedad.</p>
+                
+                <label for="whatsapp">CELULAR O WHATSAPP</label>
+                <div class="phone-input">
+                    <span>+52</span>
+                    <input type="text" id="whatsapp" placeholder="NUMERO">
+                </div>
+    
+                <label for="email">CORREO ELECTRONICO</label>
+                <input type="email" id="email" placeholder="CORREO">
+    
+                <label for="other">OTROS</label>
+                <input type="text" id="other" placeholder="ESPECIFICAR (FACEBOOK, INSTAGRAM, ETC.)">
+            </div>
+    
+            <div class="security-info">
+                <img src="lock-icon.png" alt="Security">
+                <p>
+                    Propiedades.com toma la seguridad de sus visitantes con la más alta prioridad y seriedad. Por lo que se informa, a los usuarios que realizar publicaciones falsas sobre inmuebles, o con intenciones fraudulentas, o distintas a las ofrecidas a través de este medio, puede constituir un delito tipificado en Código Penal Federal, fracción XVI...
+                </p>
+            </div>
+        </div>
+        <button class="publish-btn">PUBLICAR</button>
+    </section>
+    
+    
+    <script>
+        function incrementValue(elementId) {
+            const valueElement = document.getElementById(elementId);
+            let currentValue = parseInt(valueElement.innerText);
+            currentValue += 1;
+            valueElement.innerText = currentValue;
+        }
+    
+        function decrementValue(elementId) {
+            const valueElement = document.getElementById(elementId);
+            let currentValue = parseInt(valueElement.innerText);
+            if (currentValue > 0) {
+                currentValue -= 1;
+            }
+            valueElement.innerText = currentValue;
+        }
+    </script>
+    
+</body>
+</html>
